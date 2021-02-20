@@ -105,17 +105,13 @@
         }
         
         function submit(){
-            /*let time = Number(document.getElementById("time").innerHTML.split(" ")[1]);
-            let name = document.getElementById("entername").value;
-            
-            var newUser = {"name": name, "time": time};*/
-            $.getJSON('/leaderboard.json', function(data){
             let time = Number(document.getElementById("time").innerHTML.split(" ")[1]);
             let name = document.getElementById("entername").value;
             
             var newUser = {"name": name, "time": time};
+            
 
-            data.push(newUser);
+            $.post("/submit-score", newUser, function(data) {
             });
         }
     </script>
