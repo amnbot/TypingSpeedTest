@@ -1,0 +1,29 @@
+body {
+    background-color: darkgray;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+    background-color: rgb(177, 191, 255);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Heavitas;
+    font-size: 24px;
+}
+
+li a:hover {
+    background-color: rgb(217, 224, 255);
+}

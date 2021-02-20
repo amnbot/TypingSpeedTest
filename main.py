@@ -1,8 +1,8 @@
 from flask import Flask, render_template
-#from second import second
+from second import second
 
 app = Flask(__name__, template_folder='templates')
-#pp.register_blueprint(second)
+app.register_blueprint(second)
 
 @app.route('/')
 def home():
