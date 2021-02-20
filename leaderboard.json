@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "name": "userOne", 
+            "time": 1.98
+        },
+        {
+            "name": "useTwo",
+            "time": 1.07
+        }
+    ]
+}

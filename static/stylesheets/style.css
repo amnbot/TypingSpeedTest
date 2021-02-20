@@ -2,6 +2,12 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+div {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .page-title {
     font-family: Heavitas;
     text-align: center;
@@ -54,7 +60,7 @@ input:hover {
 button {
     margin-top: 25px;
     margin: 25px;
-    background-color: #4CAF50;
+    background-color: #5bbe5e;
     transition: transform 0.2s;
     font-family: heavitas;
     padding: 15px 32px;
@@ -66,6 +72,15 @@ button {
 
 button:hover {
     transform: scale(1.15);
+    background-color: #84e688;
+}
+
+#submit {
+    background-color: rgb(230, 87, 87);
+}
+
+#submit:hover {
+    background-color: rgb(255, 122, 122);
 }
 
 
