@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title class="app-name">keyboard type</title>
+        <link href="{{ url_for('static', filename='stylesheets/style.css') }}" rel='stylesheets'>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <strong>
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                        </ul>
+                    </nav>
+                </strong>
+            </div>
+        </header>
+        <div class="contianer">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
