@@ -4,9 +4,17 @@
         <h1 class="page-title">Keyboard type fast</h1>
     </div>
     <div>
+        <p id="message"></p>
         <form method="POST">
-            <input name="text">
+            <input id='input' name="text">
             <input type="submit">
         </form>
     </div>
+    <script>
+        var input=document.getElementById("input");
+        input.addEventListener("keydown", function(event){
+            event.preventDefault();
+            document.getElementById("message").innerHTML="yes type fast";
+        });
+    </script>
 {% endblock %}
