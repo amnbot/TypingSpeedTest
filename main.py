@@ -35,12 +35,10 @@ def make_sentence():
     
     return sentence.strip() 
             
-   
 
 
-print(make_sentence())     
-print(get_prompt())
-print("salut")
+
+
 if __name__ == "__main__":
         app.run(debug=True)
 
