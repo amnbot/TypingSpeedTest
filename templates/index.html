@@ -17,7 +17,7 @@
             <input id='input' name="text">
         </form>
         <button onclick="getNewPrompt()" id="button">New Prompt</button>
-        <button onclick="sumbitScore()" id="sumbit">Sumbit Score</button>
+        <button onclick="submitScore()" id="submit">Submit Score</button>
     </div>
     <script>
         var input=document.getElementById("input");
@@ -57,7 +57,7 @@
                 document.getElementById('time').style.color="green";
                 document.getElementById('wps').style.color="green";
                 
-                document.getElementById('sumbit').disabled = false;
+                document.getElementById('submit').disabled = false;
                 document.getElementById('input').disabled = true;
             }
             else

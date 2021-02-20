@@ -53,6 +53,7 @@ input:hover {
 
 button {
     margin-top: 25px;
+    margin: 25px;
     background-color: #4CAF50;
     transition: transform 0.2s;
     font-family: heavitas;
