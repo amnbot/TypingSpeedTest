@@ -14,7 +14,7 @@
         <p id="wps" class="message"></p>
         <!--<p id="user-input"></p>-->
         <form method="POST" autocomplete="off">
-            <input id='input' name="text">
+            <input id='input' name="text" spellcheck="false">
         </form>
         <button onclick="getNewPrompt()" id="button">New Prompt</button>
         <button onclick="submitScore()" id="submit">Submit Score</button>
@@ -54,11 +54,12 @@
 
                 let timeElapsed = Math.round(((end - start)/1000)*100)/100;
                 var wps = Math.round((prompt.split(' ').length/timeElapsed)*100)/100;
+                let wpm = Math.round(wps *60*100)/100;
                 var accuracy = Math.round(((prompt.length - err)/prompt.length)*100)
                 document.getElementById('message').innerHTML = "Congrats!";
                 document.getElementById('accuracy').innerHTML = "Accuracy: " + accuracy + "%";
                 document.getElementById('time').innerHTML = "Time: " + timeElapsed + " s";
-                document.getElementById('wps').innerHTML = "Speed: " + wps + " wps";
+                document.getElementById('wps').innerHTML = "Speed: " + wps + " wps" + " (" + String(wpm) + " wpm" + ") ";
                 document.getElementById('message').style.color="green";
                 document.getElementById('accuracy').style.color="green";
                 document.getElementById('time').style.color="green";
