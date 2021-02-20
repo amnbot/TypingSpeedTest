@@ -3,4 +3,21 @@
     <div class="index">
         <h1 class="page-title">Leaderboard</h1>
     </div>
+
+    <div>
+        <table id="leaderboard">
+            <tr>
+                <th>UserName</th>
+                <th>Time</th>
+            </tr>
+        
+            {% for user in board %}
+            <tr>
+                <td>{{user["name"]}}</td>
+                <td>{{user["time"]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
 {% endblock %}

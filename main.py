@@ -21,11 +21,26 @@ def get_prompt():
     with open("db.json") as prompts:
             data = json.load(prompts)
             
-            return random.choice(data['prompts'])
+            #return random.choice(data['prompts'])
+
+            return make_sentence()
+def make_sentence():
+    sentence = ""
+    
+    with open('words.txt', 'r+') as words:
+        word_list = words.read().split('\n')
+        for i in range(10):
+            word = random.choice(word_list)
+            sentence += word + " "
+    
+    return sentence.strip() 
             
-print(get_prompt())
+
+
+
 
 if __name__ == "__main__":
         app.run(debug=True)
+
 
 

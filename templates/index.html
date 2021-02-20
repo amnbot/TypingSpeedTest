@@ -12,9 +12,9 @@
         <p id="accuracy" class="message"></p>
         <p id="time" class="message"></p>
         <p id="wps" class="message"></p>
-        <p id="user-input"></p>
+        <!--<p id="user-input"></p>-->
         <form method="POST" autocomplete="off">
-            <input id='input' name="text">
+            <input id='input' name="text" spellcheck="false">
         </form>
         <button onclick="getNewPrompt()" id="button">New Prompt</button>
         <button onclick="submitScore()" id="submit">Submit Score</button>
@@ -34,24 +34,32 @@
                 start = Date.now();
             }
             var c = input.value;
-            document.getElementById("user-input").innerHTML=c;
+           // document.getElementById("user-input").innerHTML=c;
             var sub = prompt.substring(0, c.length);
+             if(c === sub){
+                document.getElementById("input").style.color="green";
+            }
+            
             if(c != sub){
                 document.getElementById('message').innerHTML = "Wrong input!";
                 err++;
-                document.getElementById("user-input").style.color="red";
+              //  document.getElementById("user-input").style.color="red";
+                document.getElementById("input").style.color="red";
             }
+
+
             else if(c === prompt)
             {
                 var end = Date.now();
 
                 let timeElapsed = Math.round(((end - start)/1000)*100)/100;
                 var wps = Math.round((prompt.split(' ').length/timeElapsed)*100)/100;
+                let wpm = Math.round(wps *60*100)/100;
                 var accuracy = Math.round(((prompt.length - err)/prompt.length)*100)
                 document.getElementById('message').innerHTML = "Congrats!";
                 document.getElementById('accuracy').innerHTML = "Accuracy: " + accuracy + "%";
                 document.getElementById('time').innerHTML = "Time: " + timeElapsed + " s";
-                document.getElementById('wps').innerHTML = "Speed: " + wps + " wps";
+                document.getElementById('wps').innerHTML = "Speed: " + wps + " wps" + " (" + String(wpm) + " wpm" + ") ";
                 document.getElementById('message').style.color="green";
                 document.getElementById('accuracy').style.color="green";
                 document.getElementById('time').style.color="green";
@@ -62,7 +70,7 @@
             }
             else
             {
-                document.getElementById("user-input").style.color="green";
+                //document.getElementById("user-input").style.color="green";
                 document.getElementById('message').innerHTML = "";
             }
         });
@@ -70,5 +78,7 @@
         function getNewPrompt(){
             location.reload();
         }
+
+        
     </script>
 {% endblock %}
