@@ -7,7 +7,7 @@ import os
 app = Flask(__name__, template_folder='templates')
 app.register_blueprint(second)
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def home():
     return render_template('index.html', prompt=get_prompt())
 
