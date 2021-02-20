@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(56, 56, 56);
 }
 
 div {
@@ -10,52 +10,80 @@ div {
 
 .page-title {
     text-align: center;
-    font-family: "Segoe UI";
+    font-family: 'Paytone One', sans-serif;
     font-weight: bolder;
+    background: -webkit-linear-gradient(0deg, rgb(157, 207, 241), rgb(241, 157, 241));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .prompt {
-    font-family: Typograph Pro;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
     text-align: center;
+    background: -webkit-linear-gradient(0deg, rgb(157, 207, 241), rgb(241, 157, 241));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .message {
     color: rgb(255, 0, 0);
     text-align: center;
-    font-family: typograph pro;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: light;
 }
 
 #user-input {
-    font-family: typograph pro;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: light;
     text-align: center;
 }
 
 form {
     text-align: center;
-    font-family: Typograph Pro;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: light;
     width: 100%;
 }
 
-input {
+.user-input {
     width: 65%;
     height: 15%;
     font-size: 30px;
-    font-family: typograph pro;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: light;
     border-radius: 10px;
     transition: transform 0.2s;
 }
 
-input:focus {
+.user-input:focus {
     outline: none;
 }
 
-input:hover {
+.user-input:hover {
     transform: scale(1.15);
+}
+
+.form-wrapper {
+    transition: transform 0.2s;
+}
+
+.form-wrapper:hover {
+    transform: scale(1.15);
+}
+
+.submit-input {
+    width: 65%;
+    height: 15%;
+    font-size: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: light;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.submit-input:focus {
+    outline: none;
 }
 
 button {
@@ -63,12 +91,21 @@ button {
     margin: 25px;
     background-color: #5bbe5e;
     transition: transform 0.2s;
-    font-family: heavitas;
+    font-family: 'Paytone One', sans-serif;
     padding: 15px 32px;
     display: inline-block;
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 6px;
+}
+
+label {
+    color: white;
+    margin: auto;
+}
+
+.submit-label {
+    font-family: 'Paytone One', sans-serif;
 }
 
 button:hover {
@@ -90,6 +127,7 @@ ul {
     padding: 0px;
     overflow: hidden;
     background-color: rgb(177, 191, 255);
+    background-image: linear-gradient(-90deg, rgb(157, 207, 241), rgb(241, 157, 241));
 }
 
 li {
@@ -102,27 +140,28 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-family: Heavitas;
+    font-family: 'Paytone One', sans-serif;
     font-size: 24px;
 }
 
 li a:hover {
-    background-color: rgb(217, 224, 255);
+    background-color: rgb(255, 223, 247);
 }
 
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    background-color: lightgray;
+    background-image: linear-gradient(-90deg, rgb(157, 207, 241), rgb(241, 157, 241));
   }
   
   td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #dddddd00;
     text-align: left;
     padding: 8px;
+    font-family: 'Josefin Sans', sans-serif;
   }
   
   tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: rgba(0, 0, 0, 0.158);
   }
