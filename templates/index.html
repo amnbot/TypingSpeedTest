@@ -18,8 +18,26 @@
         </form>
         <button onclick="getNewPrompt()" id="button">New Prompt</button>
         <button onclick="submitScore()" id="submit">Submit Score</button>
+        
     </div>
+
+    <div align="center" class="hiscores">
+        
+        <form method="POST" autocomplete="off">
+            <label for="entername" id="lbl">Your name:</label>
+            <input id="entername" spellcheck="false">
+            <button onclick="submit()" id="submission">Submit</button>
+        </form>
+        
+        
+    </div>
+    <script src="jquery-3.5.1.js"></script>
     <script>
+        
+        document.getElementById("entername").hidden = true;
+        document.getElementById("lbl").hidden = true;
+        document.getElementById("submission").style.visibility = "hidden";
+
         var input=document.getElementById("input");
         var prompt = document.getElementById('prompt').innerHTML;
         var err = 0;
@@ -42,7 +60,7 @@
             
             if(c != sub){
                 document.getElementById('message').innerHTML = "Wrong input!";
-                err++;
+                if(!event.keyCode === 8)err++;
               //  document.getElementById("user-input").style.color="red";
                 document.getElementById("input").style.color="red";
             }
@@ -52,7 +70,7 @@
             {
                 var end = Date.now();
 
-                let timeElapsed = Math.round(((end - start)/1000)*100)/100;
+                var timeElapsed = Math.round(((end - start)/1000)*100)/100;
                 var wps = Math.round((prompt.split(' ').length/timeElapsed)*100)/100;
                 let wpm = Math.round(wps *60*100)/100;
                 var accuracy = Math.round(((prompt.length - err)/prompt.length)*100)
@@ -67,6 +85,7 @@
                 
                 document.getElementById('submit').disabled = false;
                 document.getElementById('input').disabled = true;
+
             }
             else
             {
@@ -78,7 +97,26 @@
         function getNewPrompt(){
             location.reload();
         }
-
         
+        function submitScore(){
+            document.getElementById("entername").hidden = false;
+            document.getElementById("lbl").hidden = false;
+            document.getElementById("submission").style.visibility = "visible";
+        }
+        
+        function submit(){
+            /*let time = Number(document.getElementById("time").innerHTML.split(" ")[1]);
+            let name = document.getElementById("entername").value;
+            
+            var newUser = {"name": name, "time": time};*/
+            $.getJSON('/leaderboard.json', function(data){
+            let time = Number(document.getElementById("time").innerHTML.split(" ")[1]);
+            let name = document.getElementById("entername").value;
+            
+            var newUser = {"name": name, "time": time};
+
+            data.push(newUser);
+            });
+        }
     </script>
 {% endblock %}
