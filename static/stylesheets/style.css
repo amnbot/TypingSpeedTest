@@ -9,8 +9,9 @@ div {
 }
 
 .page-title {
-    font-family: Heavitas;
     text-align: center;
+    font-family: "Segoe UI";
+    font-weight: bolder;
 }
 
 .prompt {
@@ -83,7 +84,6 @@ button:hover {
     background-color: rgb(255, 122, 122);
 }
 
-
 ul {
     list-style: none;
     margin: 0;
@@ -114,6 +114,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    background-color: lightgray;
   }
   
   td, th {
