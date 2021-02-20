@@ -26,8 +26,9 @@
         <form method="POST" autocomplete="off">
             <label for="entername" id="lbl">Your name:</label>
             <input id="entername" spellcheck="false">
-            <button onclick="submit()" id="submission">Submit</button>
+            
         </form>
+        <button onclick="submit()" id="submission">Submit</button>
         
         
     </div>
@@ -109,7 +110,7 @@
             let name = document.getElementById("entername").value;
             
             var newUser = {"name": name, "time": time};
-            
+            document.write(name);
 
             $.post("/submit-score", newUser, function(data) {
             });
