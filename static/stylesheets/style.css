@@ -150,18 +150,186 @@ li a:hover {
 
 table {
     font-family: arial, sans-serif;
+    margin-left: 24%;
     border-collapse: collapse;
-    width: 100%;
+    width: 50%;
     background-image: linear-gradient(-90deg, rgb(157, 207, 241), rgb(241, 157, 241));
   }
-  
+
   td, th {
     border: 1px solid #dddddd00;
     text-align: left;
     padding: 8px;
     font-family: 'Josefin Sans', sans-serif;
   }
-  
+
+  tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.158);
+  }body {
+    background-color: rgb(56, 56, 56);
+}
+
+div {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.page-title {
+    text-align: center;
+    font-family: 'Paytone One', sans-serif;
+    font-weight: bolder;
+    background: -webkit-linear-gradient(0deg, rgb(157, 207, 241), rgb(241, 157, 241));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.prompt {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    background: -webkit-linear-gradient(0deg, rgb(157, 207, 241), rgb(241, 157, 241));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.message {
+    color: rgb(255, 0, 0);
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: light;
+}
+
+#user-input {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: light;
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: light;
+    width: 100%;
+}
+
+.user-input {
+    width: 65%;
+    height: 15%;
+    font-size: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: light;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.user-input:focus {
+    outline: none;
+}
+
+.user-input:hover {
+    transform: scale(1.15);
+}
+
+.form-wrapper {
+    transition: transform 0.2s;
+}
+
+.form-wrapper:hover {
+    transform: scale(1.15);
+}
+
+.submit-input {
+    width: 65%;
+    height: 15%;
+    font-size: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: light;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.submit-input:focus {
+    outline: none;
+}
+
+button {
+    margin-top: 25px;
+    margin: 25px;
+    background-color: #5bbe5e;
+    transition: transform 0.2s;
+    font-family: 'Paytone One', sans-serif;
+    padding: 15px 32px;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 6px;
+}
+
+label {
+    color: white;
+    margin: auto;
+}
+
+.submit-label {
+    font-family: 'Paytone One', sans-serif;
+}
+
+button:hover {
+    transform: scale(1.15);
+    background-color: #84e688;
+}
+
+#submit {
+    background-color: rgb(230, 87, 87);
+}
+
+#submit:hover {
+    background-color: rgb(255, 122, 122);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+    background-color: rgb(177, 191, 255);
+    background-image: linear-gradient(-90deg, rgb(157, 207, 241), rgb(241, 157, 241));
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 24px;
+}
+
+li a:hover {
+    background-color: rgb(255, 223, 247);
+}
+
+table {
+    font-family: arial, sans-serif;
+    margin-left: 24%;
+    border-collapse: collapse;
+    width: 50%;
+    background-image: linear-gradient(-90deg, rgb(157, 207, 241), rgb(241, 157, 241));
+  }
+
+  td, th {
+    border: 1px solid #dddddd00;
+    text-align: left;
+    padding: 8px;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
   tr:nth-child(even) {
     background-color: rgba(0, 0, 0, 0.158);
   }

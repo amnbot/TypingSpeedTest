@@ -14,11 +14,11 @@
         <p id="wps" class="message"></p>
         <!--<p id="user-input"></p>-->
         <form method="POST" autocomplete="off">
-            <input id='input' name="text" spellcheck="false" class="user-input">
+            <input onDrop="return false" onpaste="return false;" id='input' name="text" spellcheck="false" class="user-input">
         </form>
         <button onclick="getNewPrompt()" id="button">NEW PROMPT</button>
         <button onclick="submitScore()" id="submit">SUBMIT SCORE</button>
-        
+
     </div>
 
     <div align="center" class="hiscores">
@@ -26,15 +26,34 @@
         <form method="POST" autocomplete="off">
             <label for="entername" id="lbl" class="sumbit-label" style="font-family: 'Josefin Sans', sans-serif;">YOUR NAME:</label>
             <input id="entername" spellcheck="false" class="submit-input">
-        
+
         </form>
         <button onclick="submit()" id="submission">Submit</button>
-        
+
         </div>
+    </div>
+    <div>
+        <p class="page-title">This is game is simple: just type the words above the text area as fast as you possibly can. <br/>Proud of your time? Just clik on "submit"!<br/></p>
     </div>
     <script src="jquery-3.5.1.js"></script>
     <script>
-        
+        document.onkeydown = function(e) {
+          if(event.keyCode == 123) {
+             return false;
+          }
+          if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+             return false;
+          }
+          if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+             return false;
+          }
+          if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+             return false;
+          }
+          if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+             return false;
+          }
+        }
         document.getElementById("entername").hidden = true;
         document.getElementById("lbl").hidden = true;
         document.getElementById("submission").style.visibility = "hidden";
@@ -45,7 +64,7 @@
         var n = 0;
         start = 0;
         document.getElementById('submit').disabled = true;
-        
+
 
         input.addEventListener("keyup", function(event){
             displayStats(color="white", displayTime=false);
@@ -59,10 +78,10 @@
            // document.getElementById("user-input").innerHTML=c;
             var sub = prompt.substring(0, c.length);
              if(c === sub){
-                
+
                 document.getElementById("input").style.color="green";
             }
-            
+
             if(c != sub){
                 document.getElementById('message').innerHTML = "Wrong input!";
                 if(event.keyCode != 8){err++};
@@ -99,7 +118,7 @@
             var end = Date.now();
 
             var timeElapsed = Math.round(((end - start)/1000)*100)/100;
-            
+
             var wps = Math.round((prompt.split(' ').length/timeElapsed)*100)/100;
             let wpm = Math.round(wps *60*100)/100;
             document.getElementById('message').innerHTML = "Congrats!";
@@ -110,24 +129,24 @@
             document.getElementById('accuracy').style.color=color;
             document.getElementById('time').style.color=color;
             document.getElementById('wps').style.color=color;
-                
-            
+
+
         }
 
         function getNewPrompt(){
             location.reload();
         }
-        
+
         function submitScore(){
             document.getElementById("entername").hidden = false;
             document.getElementById("lbl").hidden = false;
             document.getElementById("submission").style.visibility = "visible";
         }
-        
+
         function submit(){
             let time = Number(document.getElementById("time").innerHTML.split(" ")[1]);
             let name = document.getElementById("entername").value;
-            
+
             var newUser = {"name": name, "time": time};
             //document.write(name);
 
