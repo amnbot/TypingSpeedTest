@@ -5,7 +5,7 @@
     </div>
     <div>
         <h1 class="page-title">Your input is:</h1>
-        <h2 class="prompt" id='prompt'>{{prompt}}t</h2>
+        <h2 class="prompt" id='prompt'>{{prompt}}</h2>
     </div>
     <div align="center">
         <p id="message" class="message"></p>
@@ -45,7 +45,10 @@
         var n = 0;
         start = 0;
         document.getElementById('submit').disabled = true;
+        
+
         input.addEventListener("keyup", function(event){
+            displayStats(color="white", displayTime=false);
             //event.preventDefault();
             n++;
             if(n===1)
@@ -56,6 +59,7 @@
            // document.getElementById("user-input").innerHTML=c;
             var sub = prompt.substring(0, c.length);
              if(c === sub){
+                
                 document.getElementById("input").style.color="green";
             }
             
@@ -69,7 +73,9 @@
 
             else if(c === prompt)
             {
-                displayStats(color="#84e688");
+                displayStats(color="#84e688", displayTime =true);
+                document.getElementById('submit').disabled = false;
+            document.getElementById('input').disabled = true;
 
             }
             else
@@ -79,23 +85,33 @@
             }
         });
 
-        function displayStats(color){
+        var timeInput = document.getElementById("entername");
+
+        timeInput.addEventListener("keyup", function(event){
+            if(event.keyCode==13){
+                event.preventDefault();
+                document.getElementById("submission").click();
+            }
+        });
+
+        function displayStats(color, displayTime){
+
             var end = Date.now();
 
             var timeElapsed = Math.round(((end - start)/1000)*100)/100;
+            
             var wps = Math.round((prompt.split(' ').length/timeElapsed)*100)/100;
             let wpm = Math.round(wps *60*100)/100;
             document.getElementById('message').innerHTML = "Congrats!";
             document.getElementById('accuracy').innerHTML = "Error count: " + err;
-            document.getElementById('time').innerHTML = "Time: " + timeElapsed + " s";
+            if(displayTime){document.getElementById('time').innerHTML = "Time: " + timeElapsed + " s";}
             document.getElementById('wps').innerHTML = "Speed: " + wps + " wps" + " (" + String(wpm) + " wpm" + ") ";
             document.getElementById('message').style.color=color;
             document.getElementById('accuracy').style.color=color;
             document.getElementById('time').style.color=color;
             document.getElementById('wps').style.color=color;
                 
-            document.getElementById('submit').disabled = false;
-            document.getElementById('input').disabled = true;
+            
         }
 
         function getNewPrompt(){
